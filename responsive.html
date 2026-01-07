@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Restaurant Website</title>
+    <style>
+      /* ============ MOBILE FIRST STYLES ============ */
+
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Container */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+
+      /* Navigation */
+      .nav {
+        background: #2c3e50;
+        color: white;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: none; /* Hidden on mobile */
+      }
+
+      .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://picsum.photos/800/400");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        margin-bottom: 40px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      /* Menu Grid */
+      .menu-grid {
+        display: grid;
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .menu-item {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .menu-content {
+        padding: 20px;
+      }
+
+      .price {
+        color: #e74c3c;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+
+      /* Footer */
+      .footer {
+        background: #2c3e50;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+      /* <!-- Responsive Styles --> */
+      /* <!-- Tablet (768PX) --> */
+      @media (min-width: 768px) {
+        body {
+          background-color: #e74c3c;
+        }
+        .container {
+          width: 85%;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .menu-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .nav-links {
+          display: flex;
+          gap: 30px;
+        }
+
+        .nav-links a {
+          color: white;
+          text-decoration: none;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+      }
+      /* Destktop Style */
+      @media (min-width: 992px) {
+        body {
+          background-color: aquamarine;
+        }
+        .container {
+          width: 80%;
+        }
+        .hero {
+          padding: 130px 20px;
+        }
+
+        .menu-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      /* Large Device */
+      @media (min-width: 1200px) {
+        body {
+          background-color: crimson;
+        }
+        .container {
+          width: 70%;
+        }
+        .hero{
+            padding: 160px 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container nav-content">
+        <div class="logo">🍽️ Foodie</div>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Menu</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Reservations</a>
+        </div>
+        <button class="menu-toggle">☰</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container">
+        <h1>Welcome to Foodie Restaurant</h1>
+        <p>Delicious food served with love since 2010</p>
+        <button
+          style="
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+          "
+        >
+          View Menu
+        </button>
+      </div>
+    </header>
+
+    <!-- Menu Section -->
+    <main class="container">
+      <h2 style="text-align: center; margin: 40px 0">Our Special Menu</h2>
+
+      <div class="menu-grid">
+        <!-- Item 1 -->
+        <div class="menu-item">
+          <img
+            src="https://picsum.photos/400/300"
+            alt="Pizza"
+            class="menu-img"
+          />
+          <div class="menu-content">
+            <h3>Margherita Pizza</h3>
+            <p>
+              Fresh tomatoes, mozzarella, basil, and olive oil on thin crust.
+            </p>
+            <div class="price">₹350</div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="menu-item">
+          <img
+            src="https://picsum.photos/400/301"
+            alt="Burger"
+            class="menu-img"
+          />
+          <div class="menu-content">
+            <h3>Classic Burger</h3>
+            <p>Beef patty, cheese, lettuce, tomato, and special sauce.</p>
+            <div class="price">₹250</div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="menu-item">
+          <img
+            src="https://picsum.photos/400/302"
+            alt="Pasta"
+            class="menu-img"
+          />
+          <div class="menu-content">
+            <h3>Spaghetti Carbonara</h3>
+            <p>Creamy pasta with bacon, eggs, and parmesan cheese.</p>
+            <div class="price">₹280</div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="menu-item">
+          <img
+            src="https://picsum.photos/400/303"
+            alt="Salad"
+            class="menu-img"
+          />
+          <div class="menu-content">
+            <h3>Caesar Salad</h3>
+            <p>
+              Fresh romaine lettuce, croutons, parmesan, and caesar dressing.
+            </p>
+            <div class="price">₹200</div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="menu-item">
+          <img
+            src="https://picsum.photos/400/304"
+            alt="Dessert"
+            class="menu-img"
+          />
+          <div class="menu-content">
+            <h3>Chocolate Lava Cake</h3>
+            <p>
+              Warm chocolate cake with molten center, served with ice cream.
+            </p>
+            <div class="price">₹180</div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="menu-item">
+          <img
+            src="https://picsum.photos/400/305"
+            alt="Drink"
+            class="menu-img"
+          />
+          <div class="menu-content">
+            <h3>Fresh Lemonade</h3>
+            <p>Homemade lemonade with mint and honey.</p>
+            <div class="price">₹120</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2024 Foodie Restaurant. All rights reserved.</p>
+        <p>📍 123 Food Street, Mumbai | 📞 +91 98765 43210</p>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8">
+          Open: Mon-Sun 11AM-11PM
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+      document
+        .querySelector(".menu-toggle")
+        .addEventListener("click", function () {
+          const navLinks = document.querySelector(".nav-links");
+          navLinks.style.display =
+            navLinks.style.display === "flex" ? "none" : "flex";
+          navLinks.style.flexDirection = "column";
+          navLinks.style.position = "absolute";
+          navLinks.style.top = "100%";
+          navLinks.style.left = "0";
+          navLinks.style.width = "100%";
+          navLinks.style.background = "#2c3e50";
+          navLinks.style.padding = "20px";
+          navLinks.style.gap = "15px";
+        });
+    </script>
+  </body>
+</html>

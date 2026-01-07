@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Query</title>
+    <style>
+      .test {
+        font-size: 50px;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          background-color: blue;
+        }
+        .test {
+          font-size: 20px;
+        }
+      }
+      @media (min-width: 900px) {
+        body {
+          background-color: red;
+        }
+        .test {
+          font-size: 100px;
+        }
+      }
+
+      @media (min-width: 601px) and (max-width: 1024px) {
+        body {
+          background-color: black;
+        }
+      }
+
+      /* 
+        576px : sm
+        768px: md
+        992px: lg
+        1200px: xl
+        1400px: xxl
+
+      */
+    </style>
+  </head>
+  <body>
+    <h1 class="test">Intro to CSS Media Query</h1>
+  </body>
+</html>
